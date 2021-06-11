@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <title>Coin Trigger</title>
+</head>
+
+<body>
+    <header class="header container mt-5">
+        <h2><strong>New Cryptocurrencies</strong></h2>
+        New cryptocurrencies added to CoinMarketCap in the last 30 days
+    </header>
+
+    <main class="container">
+        <section class="row mt-5">
+
+            <% coins.forEach((coin, index) => { %>
+            <div class="col-sm-6 states-collection">
+                <div class="card mb-3 text-white border border-light rounded">
+                    <div class="card-header text-white bg-dark">
+                        <a href="<%= coin.coin_link %> " class="nav-link" target="_blank" rel="noopener noreferrer">
+                            <%= coin.name %>
+                            <span class="float-right"><%= coin.coin_symbol %> </span>
+                        </a>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="text-dark row text">
+                            <div class="card border-button col-sm-12">
+                                <span class="card-title ma-5 nav-link active font-weight-bold">Price: <span
+                                        class="card-text text-success ma-5 float-right"> <%= coin.price %>
+                                    </span></span>
+
+                            </div>
+                            <div class="card border-button col-sm-12">
+                                <span class="card-title ma-5 nav-link active font-weight-bold">1h: <span
+                                        class="card-text text-warning ma-5 float-right">
+                                        <%= coin._1h %> </span></span>
+
+                            </div>
+                            <div class="card border-button col-sm-12">
+                                <span class="card-title ma-5 nav-link active font-weight-bold">24h: <span
+                                        class="card-text text-warning ma-5 float-right">
+                                        <%= coin._24h %> </span></span>
+
+                            </div>
+                            <div class="card border-button col-sm-12"
+                                title="A measure of how much of a cryptocurrency was traded in the last 24 hours.">
+                                <span class="card-title ma-5 nav-link active font-weight-bold">Volume: <span
+                                        class="card-text text-success ma-5 float-right">
+                                        <%= coin.volume %> </span></span>
+
+                            </div>
+                            <div class="card border-button col-sm-12">
+                                <span class="card-title ma-5 nav-link active font-weight-bold">Blockchain: <span
+                                        class="card-text text-warning ma-5 float-right"><%= coin.blockchain %>
+                                    </span></span>
+
+                            </div>
+                            <div class="card border-button col-sm-12">
+                                <span class="card-title ma-5 nav-link active font-weight-bold">Added: <span
+                                        class="card-text text-warning ma-5 float-right">
+                                        <%= coin.added %> </span></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% }) %>
+
+        </section>
+
+    </main>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+
+</html>

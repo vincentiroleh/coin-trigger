@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/7b171943-9504-4ccb-87c7-f0e637b24821/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/coin-trigger",
+    "appService.deploySubpath": "."
+}
