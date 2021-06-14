@@ -5,7 +5,8 @@ const http = require('http');
 const { PORT } = require('../src/config/env.js');
 app.set('port', PORT);
 
-require('../src/config/mongoose.js')
+require('../src/config/mongoose.js');
+require('../src/jobs/cron.js');
 
 // // Create HTTP server.
 const server = http.createServer(app);

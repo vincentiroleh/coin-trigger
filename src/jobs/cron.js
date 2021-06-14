@@ -1,10 +1,9 @@
 const cron = require('node-cron');
-const Scrapper = require('./scrapper')
+const scrapper = require('./scrapper')
 
-// Schedule tasks (scrapper function) to be run on the server every minutes.
-cron.schedule('* * * * *', function () {
-    console.log('running a task every minute');
-    Scrapper()
+// Schedule tasks (scrapper function) to be run on the server every hour.
+cron.schedule('* * * * *', async function () {
+    scrapper();
 });
 
 module.exports = cron;

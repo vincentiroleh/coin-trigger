@@ -27,16 +27,14 @@ async function Scrapper() {
 
             const tableRow = { name, coin_symbol, coin_link, price, _1h, _24h, volume, blockchain, added };
             scrapedData.push(tableRow)
-
-            // const dbCoin = await Coins.find();
         })
         Coins.deleteMany({}).then(() => console.log('data deleted')).catch((err) => console.error(err))
         Coins.insertMany(scrapedData)
-            .then(() => console.log('Data inserted'))
+            .then((data) => console.log('Data inserted'))
             .catch((err) => console.error(err))
     } catch (error) {
         console.error(error)
     }
 };
 
-module.exports = Scrapper();
+module.exports = Scrapper;
